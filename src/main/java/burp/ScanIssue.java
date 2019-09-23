@@ -21,7 +21,7 @@ import java.net.URL;
 
 public class ScanIssue implements IScanIssue {
 
-  private IBurpExtenderCallbacks burpExtenderCallbacks;
+  // private IBurpExtenderCallbacks burpExtenderCallbacks;
   private IHttpRequestResponse httpRequestResponse;
 
   ScanIssue(IBurpExtenderCallbacks burpExtenderCallbacks,
