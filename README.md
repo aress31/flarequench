@@ -31,7 +31,7 @@ $ cd .\flarequench\
 ```
 3.  Create the flarequench JarFile:
 ```console
-gradle fatJar
+gradle build shadowJar
 ```
 
 ### Burp Suite configuration
