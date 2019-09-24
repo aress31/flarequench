@@ -19,6 +19,10 @@ deploy:
     tags: true
   skip_cleanup: true
 
+install:
+  - gradle clean
+  - gradle build shadowJar
+
 jdk:
   - oraclejdk11
 
