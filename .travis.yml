@@ -4,7 +4,7 @@ before_cache:
 - rm -f  $HOME/.gradle/caches/modules-2/modules-2.lock
 - rm -fr $HOME/.gradle/caches/*/plugin-resolution/
 
-before_install: brew install gradle
+before_install: if [ "$TRAVIS_OS_NAME" = "osx" ]; then brew install gradle ; fi
 
 cache:
   directories:
