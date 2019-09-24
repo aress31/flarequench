@@ -1,7 +1,6 @@
 build/
 *.swp
 .classpath
-.gradle/
 .idea/workspace.xml
 .project
 .settings/

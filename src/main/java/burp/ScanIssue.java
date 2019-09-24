@@ -26,7 +26,7 @@ public class ScanIssue implements IScanIssue {
 
   ScanIssue(IBurpExtenderCallbacks burpExtenderCallbacks,
       IHttpRequestResponse httpRequestResponse) {
-    this.burpExtenderCallbacks = burpExtenderCallbacks;
+    // this.burpExtenderCallbacks = burpExtenderCallbacks;
     this.httpRequestResponse = httpRequestResponse;
   }
 
