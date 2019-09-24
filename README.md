@@ -17,9 +17,9 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
 
 Your generous donations will keep me motivated.
 
-* Bitcoin: 15aFaQaW9cxa4tRocax349JJ7RKyj7YV1p
-* Bitcoin Cash: qqez5ed5wjpwq9znyuhd2hdg86nquqpjcgkm3t8mg3
-* Etherum: 0x70bC178EC44500C17B554E62BC31EA2B6251f64B
+*   Bitcoin: 15aFaQaW9cxa4tRocax349JJ7RKyj7YV1p
+*   Bitcoin Cash: qqez5ed5wjpwq9znyuhd2hdg86nquqpjcgkm3t8mg3
+*   Etherum: 0x70bC178EC44500C17B554E62BC31EA2B6251f64B
 
 ## Installation
 
@@ -27,16 +27,13 @@ Your generous donations will keep me motivated.
 
 #### Windows & Linux
 
-1. Install gradle (<https://gradle.org/>)
-2. Download the repository.
-
+1.  Install gradle (<https://gradle.org/>)
+2.  Download the repository.
 ```console
 git clone https://github.com/AresS31/flarequench
 $ cd .\flarequench\
 ```
-
-3. Create the flarequench JarFile:
-
+3.  Create the flarequench JarFile:
 ```console
 gradle fatJar
 ```
@@ -47,11 +44,10 @@ In Burp Suite, under the `Extender/Options` tab, click on the `Add` button and l
 
 ## Possible Improvements
 
-* [ ] Improve the reliablity.
-* [x] Optimise the source code.
+*   [ ] Improve the reliablity.
+*   [x] Optimise the source code.
 
 ## License
-
 Copyright (C) 2019 Alexandre Teyar
 
 Licensed under the Apache License, Version 2.0 (the "License");
