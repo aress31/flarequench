@@ -10,11 +10,11 @@ cache:
   - $HOME/.gradle/wrapper/
 
 deploy:
-  api_key: $GITHUB_TOKEN
+  api_key: 
+    secure: $GITHUB_TOKEN
   file: build/libs/flarequench-all.jar
   provider: releases
   on:
-    branch: master
     tags: true
   skip_cleanup: true
 
