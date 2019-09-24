@@ -9,4 +9,20 @@ cache:
   - $HOME/.gradle/caches/
   - $HOME/.gradle/wrapper/
 
-jdk: oraclejdk11
+deploy:
+  provider: releases
+  github_token: $GITHUB_TOKEN
+  file: build/libs/flarequench-all.jar
+  skip_cleanup: true
+  on:
+    branch: master
+    tags: true
+
+jdk:
+  - oraclejdk10
+  - oraclejdk11
+
+os:
+- linux
+- osx
+- windows

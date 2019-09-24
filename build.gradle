@@ -8,11 +8,19 @@ dependencies {
     compile group: 'net.portswigger.burp.extender', name: 'burp-extender-api', version: '2.1'
 }
 
-test {
-    testLogging.showStandardStreams = true
+jar {
+    manifest {
+        attributes "Main-Class": "com.burp.flarequench"
+    }
+    from {
+        configurations.compile.collect { it.isDirectory() ? it : zipTree(it) }
+    }
 }
 
 task fatJar(type: Jar) {
+    manifest {
+        attributes 'Main-Class': 'com.burp.flarequench'
+    }
     baseName = project.name + '-all'
     from { configurations.compile.collect { it.isDirectory() ? it : zipTree(it) } }
     with jar
