@@ -12,6 +12,7 @@ cache:
 deploy:
   api_key: 
     secure: $GITHUB_TOKEN
+  file: build/libs/flarequench.jar
   provider: releases
   on:
     all_branches: true
