@@ -46,7 +46,7 @@ public class ScanIssue implements IScanIssue {
 
   @Override
   public String getIssueName() {
-    return "CloudFlare bypass";
+    return "Cloudflare bypass";
   }
 
   @Override
@@ -67,27 +67,37 @@ public class ScanIssue implements IScanIssue {
   @Override
   public String getIssueBackground() {
     return
-        "<p>CloudFlare is a web infrastructure and website security company, providing content "
+        "<p>Cloudflare is a web infrastructure and website security company, providing content "
             + "delivery network services, DDoS mitigation, Internet security, and distributed "
-            + "domain name server services. CloudFlare's services sit between a website's visitor "
-            + "and the CloudFlare user's hosting provider, acting as a reverse proxy for "
+            + "domain name server services. Cloudflare's services sit between a website's visitor "
+            + "and the Cloudflare customer's hosting provider, acting as a reverse proxy for "
             + "websites.</p>"
             + ""
-            + "<p>Using CrimeFlare it was possible to obtain the IP address(es) of the application "
-            + "server(s) sitting behind the CloudFlare. With this information an attacker could "
+            + "<p>It was possible to obtain the application's origin IP(s) which represent the"
+            + "server(s) sitting behind Cloudflare. With this information an attacker could"
             + "directly target the application server(s), effectively bypassing the layer of "
-            + "protection offered by CloudFlare. To do so, an attacker would need to direct its "
-            + "network traffic to the discovered IP address(es) without omitting to set the "
-            + "\"Host\" header of its HTTP(S) requests to the relevant hostname in order for the "
-            + "server to route the traffic to the relevant application.</p>";
+            + "protection offered by Cloudflare. To exploit this, an attacker would need to "
+            + "redirect their network traffic to the discovered origin IP(s) and manipulate the "
+            + "\"Host\" header of their HTTP(S) requests to the relevant hostname in order to "
+            + "ensure that the application's origin server is still able to route the traffic "
+            + "to the correct virtual host. This destination IP and host header manipulation "
+            + "can be achieved automatically using the Target Redirector Burp extension "
+            + "available in the Burp App Store.</p>"
+            + ""
+            + "<p>When using this approach, keep in mind that behind Cloudflare, the naked "
+            + "application might be hosted from a different TCP port than that which Cloudflare "
+            + "presented it on. A port scan of the origin IP and a process of elimination can "
+            + "help to identify the correct port. The Target Redirector extension can also "
+            + "automatically change the port, as well as switch between HTTP and HTTPS "
+            + "necessary."</p>";
   }
 
   @Override
   public String getRemediationBackground() {
     return "<p>It is strongly advised to set firewall rules on the application server(s) so that "
-        + "only web requests from CloudFlare and IP addresses that the application may require "
+        + "only web requests from Cloudflare and IP addresses that the application may require "
         + "access to are authorised. This will prevent attackers from performing Denial of Service "
-        + "(DoS) attacks or any other type of attacks that CloudFlare could hinder or prevent "
+        + "(DoS) attacks or any other type of attacks that Cloudflare could hinder or prevent "
         + "altogether.</p>";
 
   }
@@ -95,10 +105,11 @@ public class ScanIssue implements IScanIssue {
   @Override
   public String getIssueDetail() {
     return
-        "<p>The application is protected by CloudFlare. However, it appears that CrimeFlare was "
-            + "able to determine the application server(s) real IP address(es). This means that "
-            + "bypassing CloudFlare using the application server IP(s) and HTTP \"Host\" header "
-            + "should be possible.</p>"
+        "<p>The application is protected by Cloudflare. However, it appears that CrimeFlare was "
+            + "able to determine the application server(s) origin IP address(es). This means that "
+            + "bypassing Cloudflare using the application's origin IP(s) and HTTP \"Host\" header "
+            + "should be possible. This can be achieved automatically using the Target Redirector "
+            + "Burp extension available in the Burp App store.</p>"
             + ""
             + "<p>Please visit <a href=\"http://www.crimeflare.org:82/cgi-bin/cfsearch.cgi\">"
             + "CrimeFlare</a> to manually investigate and validate this issue.</p>";
@@ -106,8 +117,8 @@ public class ScanIssue implements IScanIssue {
 
   @Override
   public String getRemediationDetail() {
-    return "<p>Consider adding firewall rules (whitelist approach) to the application server(s) to "
-        + "limit direct access using the its supposed to be hidden IP address(es).</p>";
+    return "<p>Consider protecting the application server(s) with firewall rules which whitelist "
+        + "Cloudflare's network and prevent access from any other IP ranges.</p>";
   }
 
   @Override
