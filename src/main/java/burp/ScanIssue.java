@@ -89,7 +89,7 @@ public class ScanIssue implements IScanIssue {
             + "presented it on. A port scan of the origin IP and a process of elimination can "
             + "help to identify the correct port. The Target Redirector extension can also "
             + "automatically change the port, as well as switch between HTTP and HTTPS "
-            + "necessary."</p>";
+            + "necessary.</p>";
   }
 
   @Override
@@ -99,7 +99,6 @@ public class ScanIssue implements IScanIssue {
         + "access to are authorised. This will prevent attackers from performing Denial of Service "
         + "(DoS) attacks or any other type of attacks that Cloudflare could hinder or prevent "
         + "altogether.</p>";
-
   }
 
   @Override
