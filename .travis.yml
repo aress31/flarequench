@@ -32,4 +32,5 @@ jdk:
 os:
 - linux
 - osx
-- windows
+# Java on Windows is not yet supported by Travis CI
+# - windows
