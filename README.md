@@ -3,7 +3,7 @@
 <a href="https://www.java.com"><img alt="lang" src="https://img.shields.io/badge/Lang-Java-blue.svg"></a>
 <a href="https://opensource.org/licenses/Apache-2.0"><img alt="license" src="https://img.shields.io/badge/License-Apache%202.0-red.svg"></a>
 
-A Burp Suite plugin that adds additional checks to the passive scanner to reveal the origin IP(s) of Cloudflare-protected web applications. 
+A Burp Suite plugin that adds additional checks to the passive scanner to reveal the origin IP(s) of Cloudflare-protected web applications.
 
 ## Installation
 
@@ -21,7 +21,7 @@ A Burp Suite plugin that adds additional checks to the passive scanner to reveal
 3. Create the standalone `jar`:
 
    ```bash
-   gradle build shadowJar
+   gradle fatJar
    ```
 
 ### Loading the Extension Into the `Burp Suite`
